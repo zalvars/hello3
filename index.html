@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- MOBILE SUPPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- WEBSITE INFO -->
+<title>Happy Valentine's Day ❤️</title>
+<meta name="description" content="A special Valentine’s Day message made with love ❤️">
+<meta name="author" content="Someone who loves you">
+
+<!-- CANONICAL DOMAIN (UPDATE IF YOU HAVE A CUSTOM DOMAIN) -->
+<link rel="canonical" href="https://username.github.io/repository-name/">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease;
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 2.5em;
+    animation: pulse 2s infinite;
+}
+
+p {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.domain {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+button {
+    margin-top: 25px;
+    padding: 14px 28px;
+    font-size: 1em;
+    border: none;
+    border-radius: 30px;
+    background: #ff3366;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff0033;
+    transform: scale(1.1);
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.4em;
+    display: none;
+    animation: fadeIn 1.5s ease;
+}
+
+/* HEART ANIMATION */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Happy Valentine’s Day ❤️</h1>
+
+    <p>
+        To my love,<br>
+        Every heartbeat of mine whispers your name.
+    </p>
+
+    <button onclick="showLove()">Click for a Surprise 💌</button>
+
+    <div class="message" id="loveMessage">
+        I love you today, tomorrow, and forever 💕
+    </div>
+
+    <div class="domain">
+        🌐 Visit: zalvarsampayan.com
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("loveMessage").style.display = "block";
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
